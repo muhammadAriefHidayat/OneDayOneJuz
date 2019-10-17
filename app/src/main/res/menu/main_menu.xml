@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/setting" android:id="@+id/settingId"/>
+    <item android:title="@string/menu_about" android:id="@+id/aboutId"/>
+
+    <item android:title="NewMessage"
+          android:id="@+id/kontakMenu"
+          android:iconTint="@color/secondary"
+          android:icon="@android:drawable/stat_notify_chat"
+          android:visible="true" app:showAsAction="always"/>
+</menu>

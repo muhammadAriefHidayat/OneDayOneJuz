@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@drawable/gradien_about"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.Utama.AboutActivity">
+
+    <TextView
+            android:id="@+id/apps"
+            android:text="@string/one_day_one_juz_app"
+            android:textSize="20sp"
+            android:layout_above="@id/versi"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    <TextView
+            android:id="@+id/versi"
+            android:textSize="18sp"
+            android:textColor="@color/prymaridark"
+            android:layout_above="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:text="@string/versi"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <ImageView
+            android:id="@+id/logo"
+            android:layout_margin="16dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo3"
+            android:layout_width="135dp"
+            android:layout_height="135dp"/>
+
+    <TextView
+            android:id="@+id/copyright"
+            android:textSize="18sp"
+            android:textColor="@color/prymaridark"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:text="copyright Muhammad Arief Hidayat"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/text"
+            android:textSize="18sp"
+            android:textColor="@color/prymaridark"
+            android:layout_below="@id/copyright"
+            android:layout_centerHorizontal="true"
+            android:text="Skripsi S1 Ilmu Komputer 2019"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:textColor="@color/black"
+            android:onClick="aplikasiLainnya"
+            android:layout_margin="16dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/cek_aplikasi_lainnya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+</RelativeLayout>

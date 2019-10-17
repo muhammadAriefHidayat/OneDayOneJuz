@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="prymaridark">#293033</color>
+    <color name="primary">#14664A</color>
+    <color name="gradientend">#1C8662</color>
+    <color name="primarydua">#24B383</color>
+    <color name="primarylight">#62D9B1</color>
+    <color name="aksen">#F7FFFFFF</color>
+    <color name="lain">#E6F2EE</color>
+    <color name="secondary">#F7F6E4</color>
+    <color name="friendsChat">#85827D</color>
+    <color name="userChat">#4BD754</color>
+    <color name="userBalonchat">#1B9A7D</color>
+    <color name="red">#F0FF2F2F</color>
+    
+
+</resources>

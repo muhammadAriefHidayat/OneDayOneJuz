@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "348266710340",
+    "firebase_url": "https://odoj-276fc.firebaseio.com",
+    "project_id": "odoj-276fc",
+    "storage_bucket": "odoj-276fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348266710340:android:1242105a29d56a53",
+        "android_client_info": {
+          "package_name": "org.odoj.onedayonejuzapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348266710340-gsi9kt6ih4tbgs2n50blvrnphv8l5doi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.odoj.onedayonejuzapp",
+            "certificate_hash": "973751f8a2450c7aecc644c5ad84b03c0d0a88af"
+          }
+        },
+        {
+          "client_id": "348266710340-po284mgh1303ond7uj2p6b1mej5o7j2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEZTFt80auEdfNjgJFYjXB8FPr1_y9PH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348266710340-po284mgh1303ond7uj2p6b1mej5o7j2g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

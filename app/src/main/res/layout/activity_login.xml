@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/secondary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.DaftarLogin.LoginActivity">
+
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+    <ImageView
+            android:contentDescription="@string/gradienbg"
+            android:layout_width="365dp"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/bg"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/bg"
+            android:scaleType="fitEnd"/>
+
+    <ImageView
+            android:layout_width="126dp"
+            android:layout_height="121dp"
+            app:srcCompat="@drawable/logo3"
+            android:contentDescription="@string/logoOdoj"
+            android:id="@+id/logo"
+            android:layout_marginBottom="16dp"
+            android:layout_above="@id/cardviwe"
+            android:layout_centerHorizontal="true"/>
+
+
+    <androidx.cardview.widget.CardView
+               android:id="@+id/cardviwe"
+               android:layout_marginTop="50dp"
+               android:paddingTop="10dp"
+               android:layout_below="@id/bg"
+               android:layout_centerHorizontal="true"
+               app:cardCornerRadius="16dp"
+               app:cardElevation="9dp"
+               app:cardUseCompatPadding="true"
+               android:background="@color/white"
+               android:layout_width="365dp"
+               android:layout_height="300dp">
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:background="@color/secondary"
+                        android:layout_height="match_parent">
+
+            <EditText
+                    android:id="@+id/emailLoginLogin"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit_round"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:drawableTint="@color/primary"
+                    android:drawableLeft="@android:drawable/ic_dialog_email"
+                    android:drawablePadding="10dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/masukkan_email"
+                    android:singleLine="true"/>
+
+
+            <EditText
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/passwordLoginLogin"
+                    android:inputType="textPassword"
+                    android:drawableTint="@color/primary"
+                    android:drawablePadding="10dp"
+                    android:background="@drawable/edit_round"
+                    android:drawableStart="@android:drawable/ic_lock_lock"
+                    android:layout_centerInParent="true"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_below="@id/emailLoginLogin"
+                    android:hint="@string/masukkan_password"/>
+
+            <Button
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/login_btn"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/btn_round"
+                    android:clickable="true"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/LoginBgnLogin"
+                    android:layout_below="@id/passwordLoginLogin"/>
+
+
+            <TextView
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:text="@string/questionAkun"
+                    android:id="@+id/question"
+                    android:layout_below="@id/LoginBgnLogin"
+                    android:layout_marginStart="40dp"
+                    android:layout_alignStart="@id/LoginBgnLogin"
+                    android:onClick="masuk"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:text="@string/daftar_disini"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:id="@+id/masukTxt"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/LoginBgnLogin"
+                    android:layout_toEndOf="@id/question"
+                    android:layout_alignEnd="@id/LoginBgnLogin"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="masuk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <ProgressBar
+                    style="?android:attr/progressBarStyle"
+                    android:indeterminateDrawable="@drawable/progres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="12dp"
+                    android:layout_above="@id/LoginBgnLogin"
+                    android:id="@+id/LoginSpinner"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</ScrollView>

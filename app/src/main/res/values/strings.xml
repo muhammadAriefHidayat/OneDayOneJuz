@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ODOJ</string>
+    <string name="background">background</string>
+    <string name="logo">logo</string>
+    <string name="logoOdoj">One Day One Juz</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="setting">Setting</string>
+    <string name="menu_about">About</string>
+    <string name="versi">Versi 1.0.0</string>
+    <string name="login_btn">Login</string>
+    <string name="questionAkun">Belum Punya Akun?</string>
+    <string name="daftar_disini">Daftar Disini</string>
+    <string name="masukkan_email">Masukkan Email</string>
+    <string name="masukkan_password">Masukkan Password</string>
+    <string name="gradienbg">gradienbg</string>
+    <string name="edit_status">Edit Status</string>
+    <string name="edit_picture">Edit Picture</string>
+    <string name="button">Button</string>
+    <string name="cek_aplikasi_lainnya">Cek Aplikasi Lainnya</string>
+    <string name="one_day_one_juz_app">One Day One Juz App</string>
+    <string name="daftar">Daftar</string>
+    <string name="masukkan_profinsi">Masukkan Profinsi</string>
+    <string name="jenis_kelamin">Pilih Jenis Kelamin</string>
+</resources>

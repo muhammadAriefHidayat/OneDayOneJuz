@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="240dp"
+              android:layout_height="200dp">
+
+
+    <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/judul"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Setor Tilawah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:layout_marginStart="6dp"
+            android:id="@+id/contoh"
+            android:layout_marginTop="24dp"
+            android:textSize="14sp"
+            android:layout_alignStart="@id/editTxt_masukkanJuz"
+            android:layout_below="@+id/judul"
+            android:text="Juz 1 - 30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    <EditText
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_centerHorizontal="true"
+            android:inputType="number"
+            android:id="@+id/editTxt_masukkanJuz"
+            android:layout_below="@+id/contoh"
+            android:hint="Masukkan nomor juz"
+            android:layout_marginBottom="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+</RelativeLayout>

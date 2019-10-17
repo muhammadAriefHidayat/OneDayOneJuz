@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/secondary"
+        tools:context=".Activity.Chat.ChatLogActivity">
+
+    <androidx.appcompat.widget.Toolbar
+            app:title="Chatting"
+            android:background="@color/primary"
+            app:titleTextColor="@color/white"
+            android:id="@+id/toolbar_LogChat"
+            android:layout_width="match_parent"
+            app:contentInsetStart="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            android:layout_height="?attr/actionBarSize">
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewChatLog"
+            android:layout_below="@id/toolbar_LogChat"
+            android:layout_above="@id/linearLayoutChatLog"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <LinearLayout
+            android:id="@+id/linearLayoutChatLog"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+        <EditText
+
+                android:layout_width="0dp"
+                android:background="@drawable/kirim_pesan"
+                android:layout_height="45dp"
+                android:hint="Ketik pesan"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:padding="2dp"
+                android:ems="10"
+                android:id="@+id/editText_chatlog"
+                android:layout_weight="1"
+                android:layout_margin="8dp"/>
+
+        <ImageView
+                android:background="@drawable/send"
+                android:layout_margin="8dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/button_send_message"/>
+    </LinearLayout>
+</RelativeLayout>
