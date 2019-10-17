@@ -155,7 +155,7 @@ class SetoranFragment : Fragment() {
 
     private fun setValueLaporan(provinsi:String, jenisKelamin:String, uid:String, currentDate:String, setoran:String){
         mRef = FirebaseDatabase.getInstance().reference.child("Laporan")
-            .child(provinsi).child(jenisKelamin).child(currentDate)
+            .child(provinsi).child(jenisKelamin).child(currentDate).child(uid)
         val laporan = Laporan(currentDate,uid,setoran)
         mRef.setValue(laporan)
             .addOnCompleteListener {
