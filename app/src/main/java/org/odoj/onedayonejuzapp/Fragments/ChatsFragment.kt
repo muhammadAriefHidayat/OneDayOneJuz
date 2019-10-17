@@ -91,8 +91,6 @@ class ChatsFragment : Fragment() {
     }
 
 
-
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater){
         inflater.inflate(R.menu.main_menu,menu)
         super.onCreateOptionsMenu(menu, inflater)
