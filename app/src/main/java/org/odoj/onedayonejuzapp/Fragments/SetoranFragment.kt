@@ -1,7 +1,6 @@
 package org.odoj.onedayonejuzapp.Fragments
 
 
-import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -122,7 +121,6 @@ class SetoranFragment : Fragment() {
 
         mref.addValueEventListener(object : ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
             override fun onDataChange(p0: DataSnapshot) {
                 p0.children.forEach {
@@ -135,13 +133,13 @@ class SetoranFragment : Fragment() {
         })
     }
 
-    @SuppressLint("SimpleDateFormat")
+
     private fun setor(setoran:String) {
         val calendar = Calendar.getInstance()
         val currentDate = DateFormat.getDateInstance().format(calendar.time)
         val dateFormatInput = SimpleDateFormat("dd MMM yyyy")
         val hasil = dateFormatInput.parse(currentDate)
-        val dateFormatOutput = SimpleDateFormat("yyyy MM dd")
+        val dateFormatOutput = SimpleDateFormat("yyyy-MM-dd")
         val date = dateFormatOutput.format(hasil)
 
         val uId= FirebaseAuth.getInstance().currentUser?.uid
@@ -176,26 +174,6 @@ class SetoranFragment : Fragment() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.setoran_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        super.onOptionsItemSelected(item)
-        if (item.itemId == R.id.pilihTanggal_menu){
-         datetimeBuilder()
-        }
-        if(item.itemId == R.id.settingId){
-            startActivity(Intent(context, SettingActivity::class.java))
-        }
-
-        if(item.itemId == R.id.aboutId){
-            startActivity(Intent(context, AboutActivity::class.java))
-        }
-        return true
-    }
-
     val calendar = Calendar.getInstance()
     val year = calendar.get(Calendar.YEAR)
     val month = calendar.get(Calendar.MONTH)
@@ -213,6 +191,26 @@ class SetoranFragment : Fragment() {
             getSetoran(date)
         },year,month,day)
         datePickerDialog.show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.setoran_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        super.onOptionsItemSelected(item)
+        if (item.itemId == R.id.pilihTanggal_menu){
+            datetimeBuilder()
+        }
+        if(item.itemId == R.id.settingId){
+            startActivity(Intent(context, SettingActivity::class.java))
+        }
+
+        if(item.itemId == R.id.aboutId){
+            startActivity(Intent(context, AboutActivity::class.java))
+        }
+        return true
     }
 
 }

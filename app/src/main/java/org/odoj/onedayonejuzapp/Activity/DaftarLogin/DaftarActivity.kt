@@ -103,9 +103,7 @@ class DaftarActivity : AppCompatActivity() {
             }
     }
 
-
-
-    fun LoginOnclickLogin (view: View){
+    fun loginOnclickLogin (view: View){
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()

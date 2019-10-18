@@ -146,6 +146,7 @@
                 android:layout_below="@id/daftarBtnDaftar"
                 android:layout_centerHorizontal="true"
                 android:orientation="horizontal"
+                android:padding="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -153,22 +154,17 @@
             <TextView
                     android:id="@+id/textpunyaakun"
                     android:background="?android:attr/selectableItemBackgroundBorderless"
-                    android:clickable="true"
-                    android:layout_below="@id/daftarBtnDaftar"
                     android:text="Sudah punya akun?"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
-
             <TextView
                     android:background="?android:attr/selectableItemBackgroundBorderless"
                     android:id="@+id/loginTxtDaftar"
-                    android:layout_toRightOf="@+id/textpunyaakun"
                     android:layout_marginStart="10dp"
-                    android:layout_below="@id/daftarBtnDaftar"
                     android:text="Login Disini!"
                     android:textStyle="bold"
-                    android:onClick="LoginOnclickLogin"
+                    android:onClick="loginOnclickLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
         </LinearLayout>

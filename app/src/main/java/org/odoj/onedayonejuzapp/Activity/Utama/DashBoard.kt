@@ -4,14 +4,10 @@ package org.odoj.onedayonejuzapp.Activity.Utama
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_dash_board.*
-import org.odoj.onedayonejuzapp.Activity.Chat.NewMessageActivity
-import org.odoj.onedayonejuzapp.Activity.Setting.SettingActivity
 import org.odoj.onedayonejuzapp.Adapter.SectionPagerAdapter
 import org.odoj.onedayonejuzapp.R
 
@@ -21,7 +17,7 @@ class DashBoard : AppCompatActivity() {
     var user : FirebaseUser? = null
     var mAuth: FirebaseAuth? = null
     var mAuthListener : FirebaseAuth.AuthStateListener? = null
-   private var sectionpageAdapter : SectionPagerAdapter? = null
+    private var sectionpageAdapter : SectionPagerAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
