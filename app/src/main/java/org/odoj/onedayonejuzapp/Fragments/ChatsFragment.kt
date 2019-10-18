@@ -34,8 +34,7 @@ class ChatsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        progressBar_FragmenCha.visibility = View.INVISIBLE
+        progressBar_FragmenCha.visibility = View.VISIBLE
 
         val linearLayoutManager = LinearLayoutManager(context,RecyclerView.VERTICAL,false)
         recyclerView_lastestMessage.adapter = adapter
@@ -58,6 +57,7 @@ class ChatsFragment : Fragment() {
 
     private fun refresRecycleViewMessage(){
         adapter.clear()
+        progressBar_FragmenCha.visibility = View.INVISIBLE
         lastMessageMap.values.forEach{
             adapter.add(LastMessageAdapter(it))
         }

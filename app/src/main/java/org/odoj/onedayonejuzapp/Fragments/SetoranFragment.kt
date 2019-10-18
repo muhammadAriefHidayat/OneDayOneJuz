@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
+import kotlinx.android.synthetic.main.activity_daftar.*
 import kotlinx.android.synthetic.main.fragment_grup.*
 import kotlinx.android.synthetic.main.setor_tilawah_dialog.view.*
 import org.odoj.onedayonejuzapp.Activity.Setting.SettingActivity
@@ -27,7 +28,6 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.HashMap
-
 
 
 /**
@@ -50,6 +50,7 @@ class SetoranFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
         super.onViewCreated(view, savedInstanceState)
+        progressBarFragmentSetoran.visibility = View.VISIBLE
 
         val linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL,false)
 
@@ -59,6 +60,7 @@ class SetoranFragment : Fragment() {
 
         getSetoran(tanggal)
         btn_setorTilawah.setOnClickListener {
+            progressBarFragmentSetoran.visibility = View.INVISIBLE
             builder()
 
         }
@@ -76,6 +78,7 @@ class SetoranFragment : Fragment() {
                 val setoran = dialogview.findViewById<EditText>(R.id.editTxt_masukkanJuz).text.toString()
                 setor(setoran)
                 dialog.dismiss()
+                progressBarFragmentSetoran.visibility = View.VISIBLE
             }.setNegativeButton("Kembali"){dialog, which ->
                 dialog.cancel()
             }.show()
@@ -159,6 +162,7 @@ class SetoranFragment : Fragment() {
         val laporan = Laporan(currentDate,uid,setoran)
         mRef.setValue(laporan)
             .addOnCompleteListener {
+                progressBarFragmentSetoran.visibility = View.INVISIBLE
             if (it.isSuccessful){
                 Toast.makeText(context,"anda berhasil menyetor", Toast.LENGTH_LONG).show()
             }else{
