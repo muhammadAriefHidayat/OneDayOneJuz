@@ -1,6 +1,7 @@
 package org.odoj.onedayonejuzapp.Fragments
 
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -15,7 +16,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.activity_daftar.*
 import kotlinx.android.synthetic.main.fragment_grup.*
 import kotlinx.android.synthetic.main.setor_tilawah_dialog.view.*
 import org.odoj.onedayonejuzapp.Activity.Setting.SettingActivity
@@ -50,7 +50,6 @@ class SetoranFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
         super.onViewCreated(view, savedInstanceState)
-        progressBarFragmentSetoran.visibility = View.VISIBLE
 
         val linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL,false)
 
@@ -87,6 +86,7 @@ class SetoranFragment : Fragment() {
     val userHasmap = HashMap<String, User>()
 
     private fun getSetoran(tanggal:String?){
+        progressBarFragmentSetoran.visibility = View.VISIBLE
         var date= tanggal
         val a = "a"
         if(date == a){
@@ -135,9 +135,14 @@ class SetoranFragment : Fragment() {
         })
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun setor(setoran:String) {
         val calendar = Calendar.getInstance()
         val currentDate = DateFormat.getDateInstance().format(calendar.time)
+        val dateFormatInput = SimpleDateFormat("dd MMM yyyy")
+        val hasil = dateFormatInput.parse(currentDate)
+        val dateFormatOutput = SimpleDateFormat("yyyy MM dd")
+        val date = dateFormatOutput.format(hasil)
 
         val uId= FirebaseAuth.getInstance().currentUser?.uid
         val dataUser = FirebaseDatabase.getInstance().getReference("dataUser/$uId")
@@ -148,7 +153,7 @@ class SetoranFragment : Fragment() {
                 val uid = uId.toString()
                 val setor= setoran
 
-                setValueLaporan(provinsi,jenisKelamin,uid, currentDate, setor)
+                setValueLaporan(provinsi,jenisKelamin,uid, date, setor)
 
             }
             override fun onCancelled(p0: DatabaseError){}
