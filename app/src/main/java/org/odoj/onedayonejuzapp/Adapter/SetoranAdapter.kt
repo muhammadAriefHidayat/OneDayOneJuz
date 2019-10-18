@@ -24,7 +24,6 @@ class SetoranAdapter(val laporan:Laporan, val tanggal :String):Item<ViewHolder>(
         ref.addValueEventListener(object :ValueEventListener{
 
             override fun onCancelled(p0: DatabaseError) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -35,6 +34,7 @@ class SetoranAdapter(val laporan:Laporan, val tanggal :String):Item<ViewHolder>(
                 val imageTarget = viewHolder.itemView.imageUser_ListSetoran
                 Picasso.get().load(uriImage).placeholder(R.drawable.usersetting).into(imageTarget)
                 Log.d("datasnapshotAdapter",dataSnapshot.toString())
+
             }
 
         })

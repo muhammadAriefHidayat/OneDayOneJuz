@@ -2,7 +2,6 @@ package org.odoj.onedayonejuzapp.Fragments
 
 
 import android.app.AlertDialog
-import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -50,13 +49,13 @@ class SetoranFragment : Fragment() {
         setHasOptionsMenu(true)
         super.onViewCreated(view, savedInstanceState)
 
-        val linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL,false)
+        val linearLayoutManagerSetoran = LinearLayoutManager(context, RecyclerView.VERTICAL,false)
 
-        recycleView_FragmenGrup.layoutManager = linearLayoutManager
+        recycleView_FragmenGrup.layoutManager = linearLayoutManagerSetoran
         recycleView_FragmenGrup.adapter = adapter
         val tanggal = "a"
 
-        getSetoran(tanggal)
+        getSetoran()
         btn_setorTilawah.setOnClickListener {
             progressBarFragmentSetoran.visibility = View.INVISIBLE
             builder()
@@ -84,53 +83,76 @@ class SetoranFragment : Fragment() {
 
     val userHasmap = HashMap<String, User>()
 
-    private fun getSetoran(tanggal:String?){
+    private fun getSetoran(){
         progressBarFragmentSetoran.visibility = View.VISIBLE
-        var date= tanggal
-        val a = "a"
-        if(date == a){
-            val calendar = Calendar.getInstance()
-            val currentDate = DateFormat.getDateInstance().format(calendar.time)
-            date = currentDate
+//        var date= tanggal
+//        val a = "a"
+//        if(date == a){
+//            val calendar = Calendar.getInstance()
+//            val currentDate = DateFormat.getDateInstance().format(calendar.time)
+//            date = currentDate
+//
+//        }
 
-        }
         val uId= FirebaseAuth.getInstance().currentUser?.uid
         val dataUser = FirebaseDatabase.getInstance().getReference("dataUser/$uId")
         dataUser.addValueEventListener(object :ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
             }
-
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val user = dataSnapshot.getValue(User::class.java)?:return
                 userHasmap[dataSnapshot.key!!] = user
                 Log.d("userlaporan",dataSnapshot.toString())
-                date?.let { getVaueLaporan(user, it) }
-                Log.d("datelaporan",date.toString())
+                getTanggalLaporan(user)
+//                Log.d("datelaporan",date.toString())
             }
         })
     }
 
-    private fun getVaueLaporan(user: User, date:String) {
+    private fun getTanggalLaporan(user: User) {
         val provinsi = user.provinsi
         val jenisKelamin = user.jenisKelamin
 
-        Log.d("tanggallaporan",date)
-
         val mref = FirebaseDatabase.getInstance().getReference("Laporan")
-            .child(provinsi).child(jenisKelamin).child(date)
+            .child(provinsi).child(jenisKelamin)
 
         mref.addValueEventListener(object : ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
             }
             override fun onDataChange(p0: DataSnapshot) {
                 p0.children.forEach {
-                    val laporan = p0.getValue(Laporan::class.java)
-                    Log.d("Laporanlapor", it.toString())
-                    Log.d("tgllaporan", date)
-                    adapter.add(SetoranAdapter(laporan!!, date))
+                    val tanggal = it.key.toString()
+                    Log.d("Laporanlapor", it.key.toString())
+
+                    getValueSetoran(tanggal,user)
+
+//                    adapter.add(SetoranAdapter(tanggal))
                 }
             }
         })
+    }
+
+    private fun getValueSetoran(tanggal:String,user:User){
+        val provinsi = user.provinsi
+        val jenisKelamin = user.jenisKelamin
+
+        val mref = FirebaseDatabase.getInstance().getReference("Laporan")
+            .child(provinsi).child(jenisKelamin).child(tanggal)
+        mref.addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                p0.children.forEach {
+                    val Laporan = it.getValue(Laporan::class.java)
+                    Log.d("ValueLaporanlapor", it.toString())
+                    adapter.add(SetoranAdapter(Laporan!!,tanggal))
+                    progressBarFragmentSetoran.visibility = View.INVISIBLE
+                }
+            }
+        })
+
     }
 
 
@@ -179,19 +201,19 @@ class SetoranFragment : Fragment() {
     val month = calendar.get(Calendar.MONTH)
     val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-    fun datetimeBuilder(){
-        val datePickerDialog = DatePickerDialog(context!!,DatePickerDialog.OnDateSetListener{ view, mYear, mMonth, mDay ->
-            val tanggal = ("$mDay-${mMonth+1}-$mYear")
-            val dateFormatInput = SimpleDateFormat("dd-MM-yyyy")
-            val hasil = dateFormatInput.parse(tanggal)
-            val dateFormatOutput = SimpleDateFormat("dd MMM yyyy")
-            val date = dateFormatOutput.format(hasil)
-            Log.d("tanggal", date)
-
-            getSetoran(date)
-        },year,month,day)
-        datePickerDialog.show()
-    }
+//    fun datetimeBuilder(){
+//        val datePickerDialog = DatePickerDialog(context!!,DatePickerDialog.OnDateSetListener{ view, mYear, mMonth, mDay ->
+//            val tanggal = ("$mDay-${mMonth+1}-$mYear")
+//            val dateFormatInput = SimpleDateFormat("dd-MM-yyyy")
+//            val hasil = dateFormatInput.parse(tanggal)
+//            val dateFormatOutput = SimpleDateFormat("dd MMM yyyy")
+//            val date = dateFormatOutput.format(hasil)
+//            Log.d("tanggal", date)
+//
+//            getSetoran(date)
+//        },year,month,day)
+//        datePickerDialog.show()
+//    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.setoran_menu, menu)
@@ -201,7 +223,7 @@ class SetoranFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         super.onOptionsItemSelected(item)
         if (item.itemId == R.id.pilihTanggal_menu){
-            datetimeBuilder()
+//            datetimeBuilder()
         }
         if(item.itemId == R.id.settingId){
             startActivity(Intent(context, SettingActivity::class.java))
