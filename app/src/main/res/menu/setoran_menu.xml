@@ -7,4 +7,11 @@
           android:id="@+id/settingId"/>
     <item android:title="@string/menu_about"
           android:id="@+id/aboutId"/>
+
+<!--    <item-->
+<!--            app:actionViewClass="androidx.appcompat.widget.SearchView"-->
+<!--            android:title="Masukkan Kata"-->
+<!--            android:id="@+id/search_id"-->
+<!--            android:icon="@drawable/ic_search_"-->
+<!--            app:showAsAction="always"/>-->
 </menu>

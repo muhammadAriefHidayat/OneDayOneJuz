@@ -6,11 +6,11 @@
         android:background="@color/secondary"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity.DaftarLogin.DaftarActivity">
+        tools:context=".activity.DaftarActivity">
 
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
         <ImageView
                 android:id="@+id/logo"
@@ -72,29 +72,29 @@
                 android:layout_centerHorizontal="true"/>
 
 
-        <EditText
+        <Button
+                android:id="@+id/provinsiBTN_Daftar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:id="@+id/provinsiEditTextDaftar"
                 android:background="@drawable/edit_round"
-                android:drawablePadding="10dp"
                 android:drawableTint="@color/primary"
+                android:drawablePadding="10dp"
+                android:textAlignment="viewStart"
                 android:drawableStart="@drawable/daftar_provinsi_icon"
                 android:layout_centerHorizontal="true"
                 android:padding="8dp"
+                android:hint="Pilih Provinsi"
+                android:layout_below="@id/passwordEditTextDaftar"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="24dp"
-                android:layout_below="@id/passwordEditTextDaftar"
-                android:hint="@string/masukkan_profinsi"/>
+                android:layout_marginEnd="24dp"/>
 
         <TextView
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:layout_alignStart="@id/provinsiEditTextDaftar"
+                android:layout_alignStart="@id/provinsiBTN_Daftar"
                 android:id="@+id/jeniskelamin_TxtView"
-                android:layout_below="@id/provinsiEditTextDaftar"
+                android:layout_below="@id/provinsiBTN_Daftar"
                 android:text="@string/jenis_kelamin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -103,7 +103,7 @@
         <RadioGroup
                 android:id="@+id/radiogrup_Daftar"
                 android:layout_below="@id/jeniskelamin_TxtView"
-                android:layout_alignStart="@id/provinsiEditTextDaftar"
+                android:layout_alignStart="@id/provinsiBTN_Daftar"
                 android:orientation="horizontal"
                 android:layout_margin="8dp"
                 android:layout_width="wrap_content"
@@ -176,12 +176,6 @@
                 android:layout_centerInParent="true"
                 android:indeterminateDrawable="@drawable/progres"
                 android:id="@+id/daftarSpinner"/>
-
-        <Spinner
-                android:layout_below="@id/daftarBtnDaftar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/spinner"/>
 
     </RelativeLayout>
 

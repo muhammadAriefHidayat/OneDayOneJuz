@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/secondary"
-        tools:context=".Activity.Chat.ChatLogActivity">
+        tools:context=".activity.ChatLogActivity">
 
     <androidx.appcompat.widget.Toolbar
             app:title="Chatting"
@@ -18,6 +18,23 @@
             app:contentInsetRight="0dp"
             app:contentInsetStartWithNavigation="0dp"
             android:layout_height="?attr/actionBarSize">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="2dp"
+                android:visibility="visible"
+                android:background="@drawable/online_status"
+                android:layout_width="12dp"
+                android:layout_height="12dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="2dp"
+                android:visibility="gone"
+                android:background="@drawable/offline_status"
+                android:layout_width="12dp"
+                android:layout_height="12dp"/>
+
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -27,7 +44,6 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
     <LinearLayout
             android:id="@+id/linearLayoutChatLog"
             android:orientation="horizontal"

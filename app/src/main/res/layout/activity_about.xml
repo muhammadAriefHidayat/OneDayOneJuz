@@ -5,7 +5,7 @@
         android:background="@drawable/gradien_about"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity.Utama.AboutActivity">
+        tools:context=".activity.AboutActivity">
 
     <TextView
             android:id="@+id/apps"

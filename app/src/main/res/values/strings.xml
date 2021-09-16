@@ -21,6 +21,23 @@
     <string name="cek_aplikasi_lainnya">Cek Aplikasi Lainnya</string>
     <string name="one_day_one_juz_app">One Day One Juz App</string>
     <string name="daftar">Daftar</string>
-    <string name="masukkan_profinsi">Masukkan Profinsi</string>
+    <string name="pilih_pulau">Pilih Pulau</string>
     <string name="jenis_kelamin">Pilih Jenis Kelamin</string>
+    <string name="tidak_ada_pesan">tidak ada pesan</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <!--    String Notifikasi bellow-->
+    <string name="text_show_notif">Testing Notif With Reply</string>
+    <string name="notif_action_reply">Reply Notif</string>
+    <string name="notif_title">New Notification</string>
+    <string name="notif_content">Ada notif baru</string>
+    <string name="notif_title_sent">Reply Sent</string>
+    <string name="notif_content_sent">Message has been sent</string>
+    <string name="hint_reply">Masukkan reply</string>
+    <string name="ayo_masuk">Ayo Masuk</string>
+    <string name="one_day_one_juz">One Day One Juz</string>
+    <string name="logout">Logout</string>
 </resources>

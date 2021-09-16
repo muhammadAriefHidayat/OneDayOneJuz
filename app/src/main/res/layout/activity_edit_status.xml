@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/secondary"
-        tools:context=".Activity.Setting.EditStatusActivity">
+        tools:context=".activity.EditStatusActivity">
 
     <androidx.appcompat.widget.Toolbar
             app:title="Edit Status"

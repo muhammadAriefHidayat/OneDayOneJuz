@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="Provinsi">
+        <item>Other Country</item>
+        <item>Aceh</item>
+        <item>Bengkulu</item>
+        <item>Jambi</item>
+        <item>Kepulauan Bangka Belitung</item>
+        <item>Kepulauan Riau</item>
+        <item>Lampung</item>
+        <item>Riau</item>
+        <item>Sumatra Barat</item>
+        <item>Sumatra Selatan</item>
+        <item>Banten</item>
+        <item>Jakarta</item>
+        <item>Jawa Barat</item>
+        <item>Jawa Tengah</item>
+        <item>Jawa Timur</item>
+        <item>Yogyakarta</item>
+        <item>Kalimantan Barat</item>
+        <item>Kalimantan Selatan</item>
+        <item>Kalimantan Tengah</item>
+        <item>Kalimantan Timur</item>
+        <item>Kalimantan Utara</item>
+        <item>Maluku</item>
+        <item>Maluku Utara</item>
+        <item>Kalimantan Tengah</item>
+        <item>Kalimantan Timur</item>
+        <item>Kalimantan Utara</item>
+        <item>Bali</item>
+        <item>Nusa Tenggara Timur</item>
+        <item>Nusa Tenggara Barat</item>
+        <item>Papua</item>
+    </array>
+
+    <array name="Jus">
+        <item>Jus 1</item>
+        <item>Jus 2</item>
+        <item>Jus 3</item>
+        <item>Jus 4</item>
+        <item>Jus 5</item>
+        <item>Jus 6</item>
+        <item>Jus 7</item>
+        <item>Jus 8</item>
+        <item>Jus 9</item>
+        <item>Jus 10</item>
+        <item>Jus 11</item>
+        <item>Jus 12</item>
+        <item>Jus 13</item>
+        <item>Jus 14</item>
+        <item>Jus 15</item>
+        <item>Jus 16</item>
+        <item>Jus 17</item>
+        <item>Jus 18</item>
+        <item>Jus 19</item>
+        <item>Jus 20</item>
+        <item>Jus 21</item>
+        <item>Jus 22</item>
+        <item>Jus 23</item>
+        <item>Jus 24</item>
+        <item>Jus 25</item>
+        <item>Jus 26</item>
+        <item>Jus 27</item>
+        <item>Jus 28</item>
+        <item>Jus 29</item>
+        <item>Jus 30</item>
+    </array>
+
+</resources>

@@ -4,6 +4,8 @@
         xmlns:tool="http://schemas.android.com/tools"
         android:orientation="vertical"
         android:layout_marginTop="8dp"
+        android:background="#ffffff"
+        android:paddingVertical="@dimen/space_8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -44,16 +46,7 @@
             android:text="-"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
-    <TextView
-            android:id="@+id/jus"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="8dp"
-            android:layout_below="@id/namaUser_ListSetoran"
-            android:layout_toEndOf="@+id/pemisah"
-            android:text="Jus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    
 
     <TextView
             android:textStyle="bold"
@@ -61,7 +54,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginStart="8dp"
             android:layout_below="@id/namaUser_ListSetoran"
-            android:layout_toEndOf="@+id/jus"
+            android:layout_toEndOf="@+id/pemisah"
             tool:text="Nomor Jus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

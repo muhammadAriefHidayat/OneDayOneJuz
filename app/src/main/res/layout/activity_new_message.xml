@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity.Chat.NewMessageActivity">
+        tools:context=".activity.NewMessageActivity">
 
     <ProgressBar
             android:indeterminateDrawable="@drawable/progres"
@@ -16,20 +16,20 @@
             android:id="@+id/progressBarPesanBaru"/>
 
     <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_newMessage"
+            android:id="@+id/toolbar_ChatAdmin"
             android:background="@color/primary"
             app:titleTextColor="@color/white"
             app:contentInsetStart="0dp"
             app:contentInsetRight="0dp"
+            android:paddingStart="@dimen/space_8"
             app:contentInsetStartWithNavigation="0dp"
             app:title="Pilih kontak"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
-    </androidx.appcompat.widget.Toolbar>
+            android:layout_height="?attr/actionBarSize"/>
 
     <androidx.recyclerview.widget.RecyclerView
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_below="@id/toolbar_newMessage"
+            android:layout_below="@id/toolbar_ChatAdmin"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

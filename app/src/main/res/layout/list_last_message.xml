@@ -1,36 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
 
     <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_margin="8dp"
             android:id="@+id/userImage_lastestMessage"
-            android:src="@drawable/usersetting"
             android:layout_width="56dp"
-            android:layout_height="56dp"/>
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/usersetting" />
 
     <TextView
             android:id="@+id/username_lastestMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="13dp"
-            android:textSize="16sp"
-            tools:text="UserName"
             android:layout_toEndOf="@+id/userImage_lastestMessage"
             android:textColor="@color/prymaridark"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            tools:text="UserName" />
 
     <TextView
             android:id="@+id/message_lastestMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/username_lastestMessage"
+            android:layout_toStartOf="@id/cardview"
+            android:layout_marginEnd="16dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
-            tools:text="Assalamualaiakum"
-            android:layout_below="@id/username_lastestMessage"
             android:layout_toEndOf="@+id/userImage_lastestMessage"
+            android:maxLines="1"
+            tools:text="Assalamualaiakum" />
+
+    <TextView
+            android:id="@+id/time_textview"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="8dp"
+            android:text="9:59 am" />
+
+    <androidx.cardview.widget.CardView
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/secondary"
+            android:id="@+id/cardview"
+            app:cardCornerRadius="4dp"
+            android:layout_width="18dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/time_textview"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

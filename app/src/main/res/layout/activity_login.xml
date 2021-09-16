@@ -6,7 +6,7 @@
         android:background="@color/secondary"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity.DaftarLogin.LoginActivity">
+        tools:context=".activity.LoginActivity">
 
 
     <RelativeLayout android:layout_width="match_parent"
@@ -101,36 +101,39 @@
                     android:id="@+id/LoginBgnLogin"
                     android:layout_below="@id/passwordLoginLogin"/>
 
-
-            <TextView
-                    android:background="?android:attr/selectableItemBackgroundBorderless"
-                    android:text="@string/questionAkun"
-                    android:id="@+id/question"
+            <LinearLayout
+                    android:layout_marginHorizontal="@dimen/space_32"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:layout_centerHorizontal="true"
                     android:layout_below="@id/LoginBgnLogin"
-                    android:layout_marginStart="40dp"
-                    android:layout_alignStart="@id/LoginBgnLogin"
-                    android:onClick="masuk"
-                    android:layout_centerInParent="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <TextView
-                    android:background="?android:attr/selectableItemBackgroundBorderless"
-                    android:text="@string/daftar_disini"
-                    android:textSize="14sp"
-                    android:layout_marginStart="10dp"
-                    android:textStyle="bold"
-                    android:id="@+id/masukTxt"
-                    android:layout_marginBottom="10dp"
-                    android:layout_below="@id/LoginBgnLogin"
-                    android:layout_toEndOf="@id/question"
-                    android:layout_alignEnd="@id/LoginBgnLogin"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:onClick="masuk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                <TextView
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:text="@string/questionAkun"
+                        android:id="@+id/question"
+                        android:onClick="masuk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:text="@string/daftar_disini"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:id="@+id/masukTxt"
+                        android:onClick="masuk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
             <ProgressBar
+                    android:visibility="gone"
                     style="?android:attr/progressBarStyle"
                     android:indeterminateDrawable="@drawable/progres"
                     android:layout_width="wrap_content"
@@ -139,7 +142,6 @@
                     android:layout_marginBottom="12dp"
                     android:layout_above="@id/LoginBgnLogin"
                     android:id="@+id/LoginSpinner"/>
-
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
     </RelativeLayout>

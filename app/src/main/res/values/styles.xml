@@ -6,7 +6,11 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/prymaridark</item>
         <item name="colorAccent">@color/prymaridark</item>
-        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlNormal">@color/aksen</item>
+    </style>
+
+    <style name="CustomTextView" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:textSize">14sp</item>
     </style>
 
 
@@ -15,7 +19,15 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/prymaridark</item>
         <item name="colorAccent">@color/prymaridark</item>
-        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlNormal">@color/aksen</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="PSButton.Primary" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/primary</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
 </resources>

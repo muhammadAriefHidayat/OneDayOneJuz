@@ -3,10 +3,18 @@
 
     <item android:title="@string/setting" android:id="@+id/settingId"/>
     <item android:title="@string/menu_about" android:id="@+id/aboutId"/>
+<!--    <item-->
+<!--            app:actionViewClass="androidx.appcompat.widget.SearchView"-->
+<!--            android:icon="@drawable/ic_search_"-->
+<!--            app:showAsAction="always"-->
+<!--            android:title="@string/search"-->
+<!--            android:id="@+id/searchMessage"/>-->
 
-    <item android:title="NewMessage"
-          android:id="@+id/kontakMenu"
-          android:iconTint="@color/secondary"
-          android:icon="@android:drawable/stat_notify_chat"
-          android:visible="true" app:showAsAction="always"/>
+
+    <!--<item-->
+            <!--app:actionViewClass="androidx.appcompat.widget.SearchView"-->
+            <!--android:title="Masukkan Kata"-->
+            <!--android:id="@+id/search_id"-->
+            <!--android:icon="@drawable/ic_search_"-->
+            <!--app:showAsAction="always"/>-->
 </menu>
